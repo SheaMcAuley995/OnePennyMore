@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.3679245, g: 0.49056602, b: 0.46981046, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.03
@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 8fed14683a647d34cbbc7c2fe3836d0c, type: 2}
+--- !u!1 &61946713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61946714}
+  m_Layer: 9
+  m_Name: LookAtObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61946714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61946713}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5029997, y: 2.1099997, z: -0.05899907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 834669154}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &267174466
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &621701545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,6 +1485,7 @@ Transform:
   - {fileID: 549491642}
   - {fileID: 1699083528}
   - {fileID: 2116754807}
+  - {fileID: 61946714}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2424,7 +2455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1425077605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,13 +2979,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700289416}
-  m_LocalRotation: {x: -0.4935004, y: -0.5045986, z: 0.46893728, w: -0.5309759}
+  m_LocalRotation: {x: 0.6882998, y: 0.13468292, z: -0.13235253, w: 0.700419}
   m_LocalPosition: {x: 0, y: 32.26841, z: 0}
   m_LocalScale: {x: 1.5800124, y: 1.4366074, z: 6.934135}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 4.9, y: 88.386, z: 0}
+  m_LocalEulerAnglesHint: {x: 89, y: 21.769001, z: 0}
 --- !u!81 &1700289418
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2986,9 +3017,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 834669150}
+  dampener: 1
+  curTarget: {fileID: 0}
   target: {fileID: 834669154}
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 33, z: 2}
+  target2: {fileID: 1699083528}
+  lookAtTarget: {fileID: 61946714}
+  smoothSpeed: 3
+  offset: {x: 0, y: 30, z: 0}
 --- !u!20 &1700289421
 Camera:
   m_ObjectHideFlags: 0
@@ -3104,7 +3139,7 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
+  m_ShowToolkit: 1
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
@@ -3138,7 +3173,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.04147561, g: 0.13207549, b: 0, a: 1}
+  m_Color: {r: 0.5789712, g: 0.764151, b: 0.43614277, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
